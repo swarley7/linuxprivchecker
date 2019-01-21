@@ -130,7 +130,7 @@ print("\n[*] ENUMERATING USER AND ENVIRONMENTAL INFO...\n")
 userInfo = {"WHOAMI": {"cmd": "whoami", "msg": "Current User", "results": results},
             "ID": {"cmd": "id", "msg": "Current User ID", "results": results},
             "ALLUSERS": {"cmd": "cat /etc/passwd", "msg": "All users", "results": results},
-            "SUPUSERS": {"cmd": "grep -v -E '^#' /etc/passwd | awk -F: '$3 == 0{print($1}'", "msg": "Super Users Found:", "results": results},
+            "SUPUSERS": {"cmd": "grep -v -E '^#' /etc/passwd | awk -F: '$3 == 0{print $1}'", "msg": "Super Users Found:", "results": results},
             "HISTORY": {"cmd": "ls -la ~/.*_history; ls -la /root/.*_history 2>/dev/null", "msg": "Root and current user history (depends on privs)", "results": results},
             "ENV": {"cmd": "env 2>/dev/null | grep -v 'LS_COLORS'", "msg": "Environment", "results": results},
             "SUDOERS": {"cmd": "cat /etc/sudoers 2>/dev/null | grep -v '#' 2>/dev/null", "msg": "Sudoers (privileged)", "results": results},
